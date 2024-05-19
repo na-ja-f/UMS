@@ -1,0 +1,109 @@
+<%- include('../layouts/header.ejs') %>
+
+<section class="intro">
+    <div class="bg-image h-100">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.25);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card bg-dark shadow-2-strong">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <h1 style="color: grey;">Dashboard</h1>
+                    <a href="/admin/home">Home</a>
+                    <a href="/admin/new-user">Add new user</a><br><br>
+                    <form>
+                      <input type="text" placeholder="search" name="search">
+                      <input type="submit" value="search">
+                    </form>
+                    <br><br>
+                    <table class="table table-dark table-borderless mb-0 ">
+                      <thead>
+                        <tr>
+                          <th scope="col">NAME</th>
+                          <th scope="col">EMAIL</th>
+                          <th scope="col">MOBILE</th>
+                          <th scope="col">IMAGE</th>
+                          <th scope="col">EDIT</th>
+                          <th scope="col">DELETE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%
+                        if(users.length > 0){
+                            for(let i=0; i<users.length; i++){
+                                %>
+                                <tr>
+                                    <td><%= users[i].name %></td>
+                                    <td><%= users[i].email %></td>
+                                    <td><%= users[i].mobile %></td>
+                                    <td><img src="/userImages/<%= users[i].image %>" alt="<%= users[i].mobile %>" height="100px" width="100px"></td>
+                                    <td><a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a></td>
+                                    <td><a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a></td>
+                                </tr>
+                                <%
+                            }
+                        }else{
+                            %>
+                            <tr>
+                                <td colspan="5">Users not found</td>
+                            </tr>
+                            <%
+                        }
+                    %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>    
+
+<%- include('../layouts/footer.ejs') %>
+
+<!-- <h1>Dashboard</h1>
+
+<a href="/admin/home">Home</a>
+<br><br><br>
+<a href="/admin/new-user">Add new user</a>
+<br><br> -->
+
+<!-- <table width="70%">
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Image</th>
+    </tr>
+
+    <%
+        if(users.length > 0){
+            for(let i=0; i<users.length; i++){
+                %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td><img src="/userImages/<%= users[i].image %>" alt="<%= users[i].mobile %>" height="200px" width="170px"></td>
+                    <td>
+                        <a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a>
+                        <a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a>
+                    </td>
+                </tr>
+                <%
+            }
+        }else{
+            %>
+            <tr>
+                <td colspan="5">Users not found</td>
+            </tr>
+            <%
+        }
+    %>
+
+</table> -->

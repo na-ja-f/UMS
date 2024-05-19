@@ -1,0 +1,66 @@
+<%- include("../layouts/header.ejs") %>
+
+<section class="vh-100">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-white" style="border-radius: 1rem; background-color: #0b0c10;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Edit details</h2>
+  
+                <form action="" method="post" enctype="multipart/form-data">
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" name="name" required value="<%= user.name %>" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                    <input type="hidden" name="user_id" value="<%= user._id %>">
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" required value="<%= user.email %>"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                      <input type="text" name="mno" required value="<%= user.mobile %>" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example3cg">Your mobile number</label>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="file" name="image" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example3cg">Your photo</label>
+                    </div>
+  
+                  <div class="d-flex justify-content-center">
+                    <input type="submit" value="update profile" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                  </div>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include("../layouts/footer.ejs") %>
+
+<!-- <img src="userImages/<%= user.image %>" height="200px" alt="<%= user.image %>"> -->
+
+<!-- <form action="" method="post" enctype="multipart/form-data">
+
+    <input type="file" name="image">
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+    <br><br>
+    <input type="text" name="name" value="<%= user.name %>" placeholder="enter name" required>
+    <br><br>
+    <input type="email" name="email" value="<%= user.email %>" placeholder="enter email" required>
+    <br><br>
+    <input type="text" name="mno" value="<%= user.mobile %>" placeholder="enter mobile number" required>
+    <br><br>
+    <input type="submit" value="update profile">
+
+</form> -->

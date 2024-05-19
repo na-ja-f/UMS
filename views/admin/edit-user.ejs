@@ -1,0 +1,61 @@
+<%- include('../layouts/header.ejs') %>
+
+<section class="vh-100">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-white" style="border-radius: 1rem; background-color: #0b0c10;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Edit user</h2>
+  
+                <form action="" method="post">
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" name="name" required value="<%= user.name %>" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                    <input type="hidden" name="id" value="<%= user._id %>">
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" required value="<%= user.email %>"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                      <input type="text" name="mno" required value="<%= user.mobile %>" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example3cg">Your mobile number</label>
+                    </div>
+  
+                  <div class="d-flex justify-content-center">
+                    <input type="submit" value="update user" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                  </div>
+
+                  <a href="/admin">Dashboard</a>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('../layouts/footer.ejs') %>
+
+<!-- <form action="" method="post">
+
+    <input type="name" name="name" placeholder="Enter name" value="<%= user.name %>" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter email" value="<%= user.email %>" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter mobile number" value="<%= user.mobile %>" required>
+    <br><br>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <input type="submit" value="update User">
+
+</form>
+
+<a href="/admin">Dashboard</a> -->
